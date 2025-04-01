@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b91e74a-898c-45b1-9c94-183f05a972b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Projeto/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/lib/mysql-connector-j-9.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/java/com/example/projeto/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/java/com/example/projeto/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/java/com/example/projeto/connents/Connent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/java/com/example/projeto/moduls/modelo.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto/src/main/resources/com/example/projeto/hello-view.fxml" beforeDir="false" />
-    </list>
+    <list default="true" id="0b91e74a-898c-45b1-9c94-183f05a972b4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2v3rsN6PHcyyAjFk4WHaZbZCKUe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,7 +25,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/PC/Documents/GitHub/Projeto_FastFood",
+    "last_opened_file_path": "C:/Users/PC/IdeaProjects/FastFood",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -64,6 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743384805362</updated>
       <workItem from="1743384807217" duration="93000" />
+      <workItem from="1743465446360" duration="66000" />
     </task>
     <servers />
   </component>
