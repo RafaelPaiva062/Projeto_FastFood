@@ -1,4 +1,4 @@
-# Documentação do Sistema Fast Food
+# Sistema Fast Food
 
 ## Visão Geral
 Este sistema é um aplicativo de gerenciamento de pedidos de um fast food. Ele utiliza Java e está estruturado em classes que representam produtos, pedidos, cardápios e um sistema de login. A conexão com o banco de dados é feita utilizando JDBC com MySQL.
