@@ -4,7 +4,7 @@ public abstract class Produto {
     protected int id_produto;
     protected String nome_produto;
     protected double preco_produto;
-    protected String promocao; // New field for promotions
+    protected String promocao; 
 
     public Produto(int id_produto, String nome_produto, double preco_produto) {
         this.id_produto = id_produto;
