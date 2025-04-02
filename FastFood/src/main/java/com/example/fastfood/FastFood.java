@@ -22,7 +22,7 @@ public class FastFood extends JFrame {
         frame = new JFrame("Fast Food");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 800);
-        frame.getContentPane().setBackground(new Color(45, 45, 45)); // Dark background
+        frame.getContentPane().setBackground(new Color(45, 45, 45)); 
         frame.setLayout(new BorderLayout());
 
         JTabbedPane tabbedPane = new JTabbedPane();
@@ -63,7 +63,7 @@ public class FastFood extends JFrame {
         tabbedPane.addTab("Gerenciamento", gerenciamentoPanel);
 
         JPanel userPanel = new JPanel(new GridBagLayout());
-        userPanel.setBackground(new Color(18, 15, 15)); // White background
+        userPanel.setBackground(new Color(18, 15, 15)); 
         JLabel userLabel = new JLabel("Usuário Logado: " + usuarioLogado);
         userLabel.setFont(new Font("Arial", Font.BOLD, 16));
         userLabel.setForeground(new Color(255, 255, 255));
@@ -133,7 +133,7 @@ public class FastFood extends JFrame {
         pesquisaFrame.setVisible(true);
     }
 
-    //JFrame para Cadastro de Produtos + Tratamento de Exceções
+    
     private void abrirCadastro() {
         JFrame cadastroFrame = new JFrame("Cadastrar Produto");
         cadastroFrame.setSize(300, 250);
@@ -141,16 +141,16 @@ public class FastFood extends JFrame {
 
         JTextField nomeField = new JTextField();
         JTextField precoField = new JTextField();
-        JTextField promocaoField = new JTextField(); // New field for promotion
+        JTextField promocaoField = new JTextField(); 
         String[] tipos = {"Lanche", "Bebida"};
         JComboBox<String> tipoBox = new JComboBox<>(tipos);
         JCheckBox extraCheck = new JCheckBox("Vegano / Alcoólico");
-        JButton btnSalvar = criarBotao("Salvar", new Color(34, 139, 34)); // Verde
+        JButton btnSalvar = criarBotao("Salvar", new Color(34, 139, 34)); 
 
         btnSalvar.addActionListener(_ -> {
             String nome = nomeField.getText().trim();
             String precoStr = precoField.getText().trim();
-            String promocao = promocaoField.getText().trim(); // Get promotion text
+            String promocao = promocaoField.getText().trim(); 
 
             if (nome.isEmpty()) {
                 JOptionPane.showMessageDialog(cadastroFrame, "O nome do produto não pode estar vazio.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -192,22 +192,20 @@ public class FastFood extends JFrame {
 
         cadastroFrame.setVisible(true);
     }
-
-    //JFrame para saída do Cardápio
     private void listarProdutos() {
         JFrame cardapioFrame = new JFrame("Cardápio");
         cardapioFrame.setSize(400, 300);
         cardapioFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        cardapioFrame.setLayout(new BorderLayout()); // Usando BorderLayout
+        cardapioFrame.setLayout(new BorderLayout()); 
 
-        // Cria um JTabbedPane para as abas
+    
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        // Cria o painel para Lanches
+        
         JPanel lanchesPanel = new JPanel();
         lanchesPanel.setLayout(new BoxLayout(lanchesPanel, BoxLayout.Y_AXIS)); // Layout vertical
 
-        // Obtém a lista de lanches e adiciona ao painel
+        
         List<Produto> lanches = cardapios.lisTodos();
         for (Produto produto : lanches) {
             if (produto instanceof Lanche) {
@@ -215,7 +213,7 @@ public class FastFood extends JFrame {
             }
         }
 
-        // Cria o painel para Bebidas
+        
         JPanel bebidasPanel = new JPanel();
         bebidasPanel.setLayout(new BoxLayout(bebidasPanel, BoxLayout.Y_AXIS)); // Layout vertical
 
@@ -225,21 +223,20 @@ public class FastFood extends JFrame {
             }
         }
 
-        // Adiciona os painéis ao JTabbedPane
+    
         tabbedPane.addTab("Lanches", lanchesPanel);
         tabbedPane.addTab("Bebidas", bebidasPanel);
 
-        // Adiciona o JTabbedPane ao JFrame
         cardapioFrame.add(tabbedPane, BorderLayout.CENTER); // Adiciona o JTabbedPane na área central
 
-        // Cria o botão "Adicionar ao Pedido"
+        
         JButton btnAdicionarPedido = criarBotao("Adicionar ao Pedido", new Color(34, 139, 34)); // Verde
         btnAdicionarPedido.addActionListener(_ -> selecionarProdutoParaPedido());
 
-        // Adiciona o botão na parte inferior do JFrame
+        
         cardapioFrame.add(btnAdicionarPedido, BorderLayout.SOUTH); // Adiciona o botão na área sul
 
-        // Torna o JFrame visível
+        
         cardapioFrame.setVisible(true);
     }
 
@@ -254,25 +251,24 @@ public class FastFood extends JFrame {
                 tipos[0]);
 
         if (tipoSelecionado == null) {
-            // O usuário cancelou a seleção de tipo.
+            
             JOptionPane.showMessageDialog(frame, "Operação cancelada.");
             return;
         }
 
-        // Obtém os produtos de acordo com o tipo selecionado
+    
         List<Produto> produtos = cardapios.listarProdutosT(tipoSelecionado);
 
         if (produtos.isEmpty()) {
-            // Se não houver produtos disponíveis, exiba uma mensagem ao usuário
             JOptionPane.showMessageDialog(frame, "Não há produtos disponíveis para o tipo selecionado.",
                     "Aviso", JOptionPane.WARNING_MESSAGE);
             return;
         }
 
-        // Cria um array de opções para o JOptionPane
+        
         String[] opcoes = produtos.stream().map(Produto::toString).toArray(String[]::new);
 
-        // Exibe o JOptionPane para seleção do produto
+
         String produtoSelecionado = (String) JOptionPane.showInputDialog(frame,
                 "Selecione um produto:",
                 "Adicionar ao Pedido",
@@ -282,7 +278,7 @@ public class FastFood extends JFrame {
                 opcoes[0]);
 
         if (produtoSelecionado != null) {
-            // Adiciona o produto selecionado ao pedido
+            
             for (Produto p : produtos) {
                 if (produtoSelecionado.contains(p.getNome_produto())) {
                     pedido.adicionarProduto(p);
@@ -291,7 +287,7 @@ public class FastFood extends JFrame {
                 }
             }
         } else {
-            // O usuário cancelou a seleção do produto
+            
             JOptionPane.showMessageDialog(frame, "Operação cancelada.");
         }
     }
@@ -303,11 +299,11 @@ public class FastFood extends JFrame {
 
         pedidoFrame.setLayout(new BorderLayout()); // Usando BorderLayout
 
-        // Painel para os produtos no pedido
+        
         JPanel produtosPanel = new JPanel();
         produtosPanel.setLayout(new BoxLayout(produtosPanel, BoxLayout.Y_AXIS));
 
-        // Adiciona os produtos ao painel
+        
         if (pedido.getProdutos().isEmpty()) {
             produtosPanel.add(new JLabel("Nenhum produto no pedido."));
         } else {
@@ -316,34 +312,34 @@ public class FastFood extends JFrame {
             }
         }
 
-        // Exibindo o total do pedido
+        
         JLabel totalLabel = new JLabel("Total: R$" + pedido.calcularTotal());
         totalLabel.setFont(new Font("Arial", Font.BOLD, 16));
         produtosPanel.add(totalLabel);
 
-        // Painel com botões de ação
+        
         JPanel botoesPanel = new JPanel();
         botoesPanel.setLayout(new FlowLayout());
 
-        // Botão para finalizar o pedido
+        
         JButton btnFinalizarPedido = criarBotao("Finalizar Pedido", new Color(34, 139, 34)); // Verde
         btnFinalizarPedido.addActionListener(_ -> finalizarPedido(pedidoFrame));
 
-        // Botão para remover produtos
+        
         JButton btnRemoverProduto = criarBotao("Remover Produto", Color.RED); // Vermelho
         btnRemoverProduto.addActionListener(_ -> removerProduto());
 
         botoesPanel.add(btnFinalizarPedido);
         botoesPanel.add(btnRemoverProduto);
 
-        // Adiciona os componentes ao Frame
+        
         pedidoFrame.add(new JScrollPane(produtosPanel), BorderLayout.CENTER); // Produtos com barra de rolagem
         pedidoFrame.add(botoesPanel, BorderLayout.SOUTH); // Botões embaixo
 
-        // Torna a janela visível
+        
         pedidoFrame.setVisible(true);
     }
-    //Função para atualizar Produtos através de ID
+    
     private void atualizarProduto() {
         String idStr = JOptionPane.showInputDialog(frame, "Digite o ID do produto a atualizar:");
         if (idStr == null || idStr.trim().isEmpty()) {
@@ -387,7 +383,7 @@ public class FastFood extends JFrame {
 
             String novaPromocao = JOptionPane.showInputDialog(frame, "Nova promoção:", produto.getPromocao());
             if (novaPromocao == null) {
-                novaPromocao = ""; // Default to empty if canceled
+                novaPromocao = ""; 
             }
 
             if (produto instanceof Lanche) {
@@ -459,7 +455,7 @@ public class FastFood extends JFrame {
         textoHistorico.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Padding
 
         try {
-            // Load order history from the database
+            
             List<String> historico = cardapios.historicoPedidos();
             if (historico == null || historico.isEmpty()) {
                 textoHistorico.setText("Nenhum histórico de pedidos encontrado.");
@@ -474,12 +470,12 @@ public class FastFood extends JFrame {
             textoHistorico.setText("Erro ao carregar histórico de pedidos: " + e.getMessage());
         }
 
-        // Add a JScrollPane for scrolling
+        
         JScrollPane scrollPane = new JScrollPane(textoHistorico);
         scrollPane.setBorder(BorderFactory.createLineBorder(Color.GRAY)); // Border for the scroll pane
         historicoFrame.add(scrollPane, BorderLayout.CENTER);
 
-        // Button to close the window
+        
         JButton btnFechar = new JButton("Fechar");
         btnFechar.setBackground(new Color(70, 70, 70)); // Button background
         btnFechar.setForeground(Color.WHITE); // Button text color
