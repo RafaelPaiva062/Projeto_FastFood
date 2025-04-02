@@ -15,7 +15,7 @@ public class Cordapios implements Server {
 
     @Override
     public void inserir(Produto produto) {
-        String promocao = produto.getPromocao(); // Assuming Produto class has getPromocao method
+        String promocao = produto.getPromocao(); 
         if (produto instanceof Lanche) {
             String sql = "INSERT INTO cardapio (nome, preco, tipo, vegano, promocao) VALUES (?, ?, ?, ?, ?)";
             try (Connection conn = ConexaoMy.getConnection();
@@ -78,7 +78,7 @@ public class Cordapios implements Server {
 
     @Override
     public void atualizar(Produto produto) {
-        String promocao = produto.getPromocao(); // Assuming Produto class has getPromocao method
+        String promocao = produto.getPromocao();
         if (produto instanceof Lanche) {
             String sql = "UPDATE cardapio SET nome = ?, preco = ?, tipo = ?, vegano = ?, promocao = ? WHERE id = ?";
             try (Connection conn = ConexaoMy.getConnection();
@@ -188,8 +188,8 @@ public class Cordapios implements Server {
     }
 
     public void inserirHistorico(Pedidos pedido, String formaPagamento) {
-        String produtos = pedido.listarProdutos(); // Obtém a lista de produtos do pedido
-        double total = pedido.calcularTotal(); // Calcula o total do pedido
+        String produtos = pedido.listarProdutos(); 
+        double total = pedido.calcularTotal(); 
         String sql = "INSERT INTO pedidos (produtos, total, forma_pagamento, nome_usuario) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = ConexaoMy.getConnection();
@@ -234,7 +234,7 @@ public class Cordapios implements Server {
         try (Connection conn = ConexaoMy.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            // Usando '%' para permitir busca parcial
+            
             String busca = "%" + predicado + "%";
             stmt.setString(1, busca);
             stmt.setString(2, busca);
@@ -263,7 +263,7 @@ public class Cordapios implements Server {
 
     @Override
     public List<String> pesquisarPedidos(String nomeUsuario, String data) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'pesquisarPedidos'");
     }
 }
