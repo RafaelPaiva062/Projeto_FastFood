@@ -65,7 +65,7 @@ public class Login extends JFrame {
 
         loginButton.addActionListener(_ -> autenticarUsuario());
         registerButton.addActionListener(_ -> {
-            // Trocar para o código que inicializa a tela de registro
+            
             JOptionPane.showMessageDialog(this, "Funcionalidade de registro ainda não implementada.");
         });
     }
