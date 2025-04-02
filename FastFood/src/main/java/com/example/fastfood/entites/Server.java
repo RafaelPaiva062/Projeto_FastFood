@@ -5,19 +5,19 @@ import com.example.fastfood.controllers.Produto;
 
 import java.util.List;
 public interface Server {
-    List<String> historicoPedidos();//listarHistoricoPedidos
-    List<Produto> lisTodos();//listarTodos
-    List<Produto> buscarNome(String nome);//buscarPorNome
-    List<Produto> listarProdutosT(String tipo);//listarPorTipo
+    List<String> historicoPedidos();
+    List<Produto> lisTodos();
+    List<Produto> buscarNome(String nome);
+    List<Produto> listarProdutosT(String tipo);
 
-    Produto buscarId(int id);//buscarPorId
+    Produto buscarId(int id);
 
-    void atualizar(Produto produto);//atualizar
+    void atualizar(Produto produto);
 
-    void inserir(Produto produto);//adicionar
-    void  inserirHistorico(Pedidos pedido, String pagamento);//adicionarHistoricoPedido
+    void inserir(Produto produto);
+    void  inserirHistorico(Pedidos pedido, String pagamento);
 
-    void remover(int idproduto);//remover
+    void remover(int idproduto);
     List<String> pesquisarPedidos(String nomeUsuario, String data);
 
 }
